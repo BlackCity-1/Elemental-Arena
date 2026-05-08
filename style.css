@@ -3,6 +3,11 @@
 
 body{
 margin:0;
+
+touch-action:none;
+
+overflow:hidden;
+
 background:
 radial-gradient(circle at top,#102040,#050814 60%);
 font-family:sans-serif;
@@ -281,5 +286,42 @@ opacity:.85;
 0%{transform:scale(1);}
 50%{transform:scale(1.05);}
 100%{transform:scale(1);}
+
+}
+
+button{
+touch-action:manipulation;
+}
+
+canvas{
+touch-action:none;
+}
+
+@media (max-width:768px){
+
+#title{
+font-size:52px;
+}
+
+#subTitle{
+font-size:16px;
+}
+
+.menuBtn{
+width:180px;
+font-size:16px;
+padding:12px;
+}
+
+.panel{
+width:150px;
+height:520px;
+font-size:11px;
+padding:8px;
+}
+
+#layout{
+gap:6px;
+}
 
 }

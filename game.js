@@ -108,6 +108,29 @@ const gameUI=document.getElementById("gameUI");
 const canvas=document.getElementById("game");
 const ctx=canvas.getContext("2d");
 
+function resizeCanvas(){
+
+const ratio = 1100 / 620;
+
+let w = window.innerWidth * 0.95;
+let h = w / ratio;
+
+if(h > window.innerHeight * 0.9){
+
+h = window.innerHeight * 0.9;
+w = h * ratio;
+
+}
+
+canvas.style.width = w + "px";
+canvas.style.height = h + "px";
+
+}
+
+resizeCanvas();
+
+window.addEventListener("resize",resizeCanvas);
+
 const bgImage = new Image();
 
 bgImage.src = "images/background.png";
