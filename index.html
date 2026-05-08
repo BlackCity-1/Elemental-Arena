@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Elemental Arena</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="backgroundGlow"></div>
+
+<div id="notice"></div>
+
+<div id="gameOverScreen">
+
+<div id="gameOverText">
+GAME OVER
+</div>
+
+<div id="gameOverSub">
+클릭하여 메인 화면으로
+</div>
+
+</div>
+
+<div id="scaleWrapper">
+
+<div id="menu">
+
+<div id="title">
+ELEMENTAL
+</div>
+
+<div id="title">
+ARENA
+</div>
+
+<div id="subTitle">
+정령 디펜스 & 자동 전투
+</div>
+
+<div id="menuButtons">
+
+<button class="menuBtn" onclick="startDefenseMode()">
+⚔ 디펜스 시작
+</button>
+
+<button class="menuBtn">
+👑 PVP 매칭 (준비중)
+</button>
+
+<button class="menuBtn" onclick="openRanking()">
+🏆 랭킹 보기
+</button>
+
+<button class="menuBtn" onclick="changeNickname()">
+✏ 닉네임 변경
+</button>
+
+</div>
+</div>
+
+<div id="gameUI" style="display:none;">
+
+<div id="layout">
+
+<div class="panel">
+
+<h2>게임 정보</h2>
+
+골드: <span id="goldTxt">30</span><br>
+웨이브: <span id="waveTxt">1</span><br>
+처치 수: <span id="killTxt">0</span><br><br>
+
+코어 체력
+
+<div class="bar">
+<div id="coreBar" style="width:100%"></div>
+</div>
+
+<div id="hpTxt">100 / 100</div>
+
+<button onclick="summonSpirit(1)">
+1단계 소환 (10G)
+</button>
+
+<button onclick="summonSpirit(2)">
+2단계 소환 (40G)
+</button>
+
+<button onclick="summonSpirit(3)">
+3단계 소환 (100G)
+</button>
+
+<hr>
+
+<button onclick="setGameSpeed(1)">1x</button>
+<button onclick="setGameSpeed(1.5)">1.5x</button>
+<button onclick="setGameSpeed(2)">2x</button>
+
+<hr>
+
+<button onclick="exitDefense()" style="background:#ff5555;">
+디펜스 종료
+</button>
+
+</div>
+
+<canvas id="game" width="1100" height="620"></canvas>
+
+<div class="panel">
+
+<h2>정령 목록</h2>
+
+<div id="spiritList"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="popup">
+
+<div id="popupInfo"></div>
+
+<button onclick="sellSpirit()">
+판매
+</button>
+
+<button onclick="startMoveSpirit()">
+위치 변경 (15G)
+</button>
+
+</div>
+
+<div id="rankingPopup"
+style="
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:420px;
+background:#000f;
+border:1px solid #33ddee;
+border-radius:18px;
+padding:20px;
+z-index:99999;
+backdrop-filter:blur(8px);
+box-shadow:
+0 0 25px #33ddee55;
+">
+
+<h2 style="
+text-align:center;
+margin-top:0;
+margin-bottom:18px;
+font-size:32px;
+">
+🏆 랭킹 TOP 3
+</h2>
+
+<div id="rankingList"></div>
+
+<button onclick="closeRanking()"
+style="
+margin-top:14px;
+background:#ff5555;
+">
+닫기
+</button>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
