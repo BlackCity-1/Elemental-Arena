@@ -108,29 +108,6 @@ const gameUI=document.getElementById("gameUI");
 const canvas=document.getElementById("game");
 const ctx=canvas.getContext("2d");
 
-function resizeCanvas(){
-
-const ratio = 1100 / 620;
-
-let w = window.innerWidth * 0.98;
-let h = w / ratio;
-
-if(h > window.innerHeight * 0.96){
-
-h = window.innerHeight * 0.9;
-w = h * ratio;
-
-}
-
-canvas.style.width = w + "px";
-canvas.style.height = h + "px";
-
-}
-
-resizeCanvas();
-
-window.addEventListener("resize",resizeCanvas);
-
 const bgImage = new Image();
 
 bgImage.src = "images/background.png";
@@ -908,18 +885,6 @@ effects=effects.filter(e=>e.life>0);
 
 function startDefenseMode(){
 
-if(document.documentElement.requestFullscreen){
-
-document.documentElement.requestFullscreen();
-
-}
-
-if(screen.orientation && screen.orientation.lock){
-
-screen.orientation.lock("landscape");
-
-}
-
 if(!player.name){
 
 changeNickname();
@@ -1357,11 +1322,8 @@ canvas.addEventListener("click",(e)=>{
 
 const rect=canvas.getBoundingClientRect();
 
-const scaleX = canvas.width / rect.width;
-const scaleY = canvas.height / rect.height;
-
-const mx = (e.clientX - rect.left) * scaleX;
-const my = (e.clientY - rect.top) * scaleY;
+const mx=(e.clientX-rect.left)/0.9;
+const my=(e.clientY-rect.top)/0.9;
 
 let clicked=null;
 
