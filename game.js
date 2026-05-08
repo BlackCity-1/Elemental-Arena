@@ -908,6 +908,18 @@ effects=effects.filter(e=>e.life>0);
 
 function startDefenseMode(){
 
+if(document.documentElement.requestFullscreen){
+
+document.documentElement.requestFullscreen();
+
+}
+
+if(screen.orientation && screen.orientation.lock){
+
+screen.orientation.lock("landscape");
+
+}
+
 if(!player.name){
 
 changeNickname();
