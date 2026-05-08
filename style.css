@@ -3,19 +3,20 @@
 
 body{
 margin:0;
-
 touch-action:none;
-
 overflow:hidden;
 
 background:
 radial-gradient(circle at top,#102040,#050814 60%);
+
 font-family:sans-serif;
-overflow:hidden;
 color:white;
+
 display:flex;
 justify-content:center;
 align-items:center;
+
+width:100vw;
 height:100dvh;
 }
 
@@ -35,8 +36,6 @@ pointer-events:none;
 }
 
 #scaleWrapper{
-transform:scale(0.9);
-transform-origin:center;
 position:relative;
 z-index:2;
 }
@@ -365,42 +364,3 @@ display:none !important;
 
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: black;
-    width: 100vw;
-    height: 100dvh;
-}
-
-/* 게임 전체 영역 */
-#game-container {
-    width: 100vw;
-    height: 100dvh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 캔버스 반응형 */
-canvas {
-    width: 100vw !important;
-    height: 100dvh !important;
-    object-fit: contain;
-    display: block;
-}
-
-/* 모바일 가로모드 대응 */
-@media screen and (orientation: landscape) {
-
-    canvas {
-        width: 100vw !important;
-        height: 100dvh !important;
-    }
-
-    .game-ui {
-        transform: scale(0.9);
-        transform-origin: center;
-    }
-}

@@ -112,10 +112,10 @@ function resizeCanvas(){
 
 const ratio = 1100 / 620;
 
-let w = window.innerWidth * 0.95;
+let w = window.innerWidth * 0.98;
 let h = w / ratio;
 
-if(h > window.innerHeight * 0.9){
+if(h > window.innerHeight * 0.96){
 
 h = window.innerHeight * 0.9;
 w = h * ratio;
@@ -1357,8 +1357,11 @@ canvas.addEventListener("click",(e)=>{
 
 const rect=canvas.getBoundingClientRect();
 
-const mx=(e.clientX-rect.left)/0.9;
-const my=(e.clientY-rect.top)/0.9;
+const scaleX = canvas.width / rect.width;
+const scaleY = canvas.height / rect.height;
+
+const mx = (e.clientX - rect.left) * scaleX;
+const my = (e.clientY - rect.top) * scaleY;
 
 let clicked=null;
 
